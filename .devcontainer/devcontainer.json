@@ -1,0 +1,16 @@
+{
+  "name": "AP CS A - Code Breakers",
+  "image": "mcr.microsoft.com/devcontainers/java:17-bookworm",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack"
+      ],
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic"
+      }
+    }
+  },
+  "postCreateCommand": "java --version && javac --version",
+  "remoteUser": "vscode"
+}
