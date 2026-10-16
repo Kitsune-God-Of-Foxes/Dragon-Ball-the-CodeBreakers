@@ -11,7 +11,7 @@ public class CodeBreakers {
      * @return true if ch contains exactly one capital A-Z letter; false otherwise
      */
     public static boolean isLetter(String ch) {
-        I = ALPHABET.contains(ch) && len(ch) == 1;
+        boolean I = ALPHABET.contains(ch) && ch.length() == 1;
     return I;
     }
 
@@ -24,14 +24,14 @@ public class CodeBreakers {
      * @param shift the signed number of alphabet positions to move
      * @return the shifted capital letter, or ch unchanged if it is not A-Z
      */
-    public static String shiftLetter(String ch, int shift) {
-        value = ALPHABET.indexOf(ch)
-        value = value + shift
-        if value > 25
+public static String shiftLetter(String ch, int shift) {
+        int value = ALPHABET.indexOf(ch);
+        value = value + shift;
+        if (value > 25)
         {
-            value = value - 25
+            value = value - 25;
         }
-        ch = ALPHABET.substring(value , value - 1)
+        ch = ALPHABET.substring(value, value + 1);
         return ch;
     }
 
@@ -47,21 +47,21 @@ public class CodeBreakers {
      *         an empty message returns an empty string
      */
     public static String encrypt(String message, int shift) {
-        int i = 0
-        String newMessage = null
-        while i < len(message)
-        {
-            letter = message.substring(i);
-            if isLetter(letter);
-            {
-                letter = shiftLetter(letter, shift);
-            
-            }
-            newMessage+= letter
-            i += 1
-        }
-        return message;
-    }
+        //int i = 0;
+        //String newMessage = null;
+        //while (i < message.length())
+        //{
+        //    String letter = message.substring(i);
+        //    if (isLetter(letter));
+        //   {
+        //        letter = shiftLetter(letter, shift);
+        //    
+        //    }
+        //    newMessage += letter;
+        //   i += 1;
+        // }
+        return " ";
+     }
 
     /**
      * Undoes encryption by reusing encrypt with the opposite normalized shift.
@@ -74,25 +74,25 @@ public class CodeBreakers {
      *         decrypt(encrypt(text, shift), shift) returns the original text
      */
     public static String decrypt(String message, int shift) {
-        int i = 0
-        String newMessage = null
-        shift = shift * -1
-        while i < len(message)
-        {
-            letter = message.substring(i);
-            if isLetter(letter);
-            {
-                letter = shiftLetter(letter, shift);
+    //    int i = 0;
+    //    String newMessage = null;
+    //    shift = shift * -1;
+    //    while (i < message.length())
+    //   {
+    //        String letter = message.substring(i);
+    //        if (isLetter(letter));
+    //        {
+    //            letter = shiftLetter(letter, shift);
             
-            }
-            newMessage+= letter
-            i += 1
-        }
-        return newMessage;
+    //        }
+    //        newMessage += letter;
+    //        i += 1;
+    //    }
+        return "";
     }
 
 
-    }
+
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -162,6 +162,7 @@ public class CodeBreakers {
         check("maximum int shift", "X", shiftLetter("A", Integer.MAX_VALUE));
         check("minimum int shift", "C", shiftLetter("A", Integer.MIN_VALUE));
         check("minimum int decryption", "A", decrypt("C", Integer.MIN_VALUE));
+        
     }
 
     public static void check(String label, String expected, String actual) {
