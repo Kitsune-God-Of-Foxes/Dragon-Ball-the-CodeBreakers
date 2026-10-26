@@ -47,20 +47,20 @@ public static String shiftLetter(String ch, int shift) {
      *         an empty message returns an empty string
      */
     public static String encrypt(String message, int shift) {
-        //int i = 0;
-        //String newMessage = null;
-        //while (i < message.length())
-        //{
-        //    String letter = message.substring(i);
-        //    if (isLetter(letter));
-        //   {
-        //        letter = shiftLetter(letter, shift);
-        //    
-        //    }
-        //    newMessage += letter;
-        //   i += 1;
-        // }
-        return " ";
+        int i = 0;
+        String newMessage = null;
+        while (i < message.length())
+        {
+            String letter = message.substring(i);
+            if (isLetter(letter));
+           {
+                letter = shiftLetter(letter, shift);
+            
+            }
+            newMessage += letter;
+           i += 1;
+        }
+        return newMessage;
      }
 
     /**
@@ -74,21 +74,21 @@ public static String shiftLetter(String ch, int shift) {
      *         decrypt(encrypt(text, shift), shift) returns the original text
      */
     public static String decrypt(String message, int shift) {
-    //    int i = 0;
-    //    String newMessage = null;
-    //    shift = shift * -1;
-    //    while (i < message.length())
-    //   {
-    //        String letter = message.substring(i);
-    //        if (isLetter(letter));
-    //        {
-    //            letter = shiftLetter(letter, shift);
+        int i = 0;
+        String newMessage = null;
+        shift = shift * -1;
+        while (i < message.length())
+       {
+            String letter = message.substring(i);
+            if (isLetter(letter));
+            {
+                letter = shiftLetter(letter, shift);
             
-    //        }
-    //        newMessage += letter;
-    //        i += 1;
-    //    }
-        return "";
+            }
+            newMessage += letter;
+            i += 1;
+        }
+        return newMessage;
     }
 
 
