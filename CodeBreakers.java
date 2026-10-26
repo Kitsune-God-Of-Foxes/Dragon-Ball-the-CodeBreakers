@@ -31,6 +31,10 @@ public static String shiftLetter(String ch, int shift) {
         {
             value = value - 25;
         }
+        if (value < -25)
+        {
+            value = value + 25;
+        }
         ch = ALPHABET.substring(value, value + 1);
         return ch;
     }
