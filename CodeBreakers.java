@@ -25,18 +25,28 @@ public class CodeBreakers {
      * @return the shifted capital letter, or ch unchanged if it is not A-Z
      */
 public static String shiftLetter(String ch, int shift) {
+        
+        
+        if (isLetter(ch))
+        {
         int value = ALPHABET.indexOf(ch);
         value = value + shift;
+
         if (value > 26)
         {
             value = value - 26;
         }
-        if (value < -25)
+        if (value < -26)
         {
-            value = value + 25;
+            value = value + 26;
         }
         ch = ALPHABET.substring(value, value + 1);
         return ch;
+        }
+        else
+        {
+        return ch;
+        }
     }
 
     /**
