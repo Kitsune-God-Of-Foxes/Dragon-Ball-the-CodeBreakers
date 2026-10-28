@@ -27,9 +27,9 @@ public class CodeBreakers {
 public static String shiftLetter(String ch, int shift) {
         int value = ALPHABET.indexOf(ch);
         value = value + shift;
-        if (value > 25)
+        if (value > 26)
         {
-            value = value - 25;
+            value = value - 26;
         }
         if (value < -25)
         {
