@@ -146,8 +146,73 @@ if (key < -999 || key > 999) {
 throw new IllegalArgumentException("K: key must be -999 through 999.");
 
 }
-
-return text;
+String letter = "";
+int key1 = key / 100;
+int key2 = (key % 100) / 10;
+int key3 = key % 10;
+int count = 1;
+String newText = "";
+for (i = 0; i <= text.length(); i++)
+{
+if (i < text.length())
+{
+letter = ALPHABET.substring(i, i + 1);
+}
+else
+{
+letter = ALPHABET.substring(i);    
+}
+if (isLetter(letter));
+{
+value = ALPHABET.indexOf(letter);
+if (count = 1)
+{
+    value += key1;
+    while (value > 26)
+    {
+        value -= 26;    
+    }
+    while (value < -26)
+    {
+        value += 26;    
+    }
+    letter = ALPHABET.substring(value, value + 1);
+    count = 2;
+}
+if (count = 2)
+{
+    value += key2;
+while (value > 26)
+    
+    {
+    value -= 26;    
+    }
+    while (value < -26)
+    {
+        value += 26;    
+    }    
+    letter = ALPHABET.substring(value, value + 1);
+    count = 3;
+}
+if (count = 3)
+{
+    value += key3;
+    while (value > 26)
+    {
+        value -= 26;    
+    }
+    while (value < -26)
+    {
+    value += 26; 
+          
+    }
+    letter = ALPHABET.substring(value, value + 1);
+    count = 1;
+}
+}
+newText += letter;
+}
+return newText;
 
 }
 
