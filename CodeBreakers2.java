@@ -123,7 +123,6 @@ public class CodeBreakers2 {
         int key2 = (key % 100) / 10;
         int key3 = key % 10;
         int count = 1;
-        int value = 0;
         if (key < 0) {
             key1 = 26 + key1;
             key2 = 26 + key2;
@@ -138,44 +137,20 @@ public class CodeBreakers2 {
             }
             if (isLetter(letter))
                 {
-                value = ALPHABET.indexOf(letter);
                 if (count == 1) {
-                    value += key1;
-                    while (value > 26) {
-                        value -= 26;
-                    }
-                    while (value < -26) {
-                        value += 26;
-                    }
-                    letter = encrypt(letter, value);
+                    letter = encrypt(letter, key1);
                     count = 2;
-                    value = 0;
+                    
                 }
                 else if (count == 2) {
-                    value += key2;
-                    while (value > 26) {
-                        value -= 26;
-                    }
-                    while (value < -26) {
-                        value += 26;
-                    }
-                    letter = encrypt(letter, value);
+                    letter = encrypt(letter, key2);
                     count = 3;
                     
-                    value = 0;
                 }
                 else if (count == 3) {
-                    value += key3;
-                    while (value > 26) {
-                        value -= 26;
-                    }
-                    while (value < -26) {
-                        value += 26;
-
-                    }
-                    letter = encrypt(letter, value);
+                    letter = encrypt(letter, key3);
                     count = 1;
-                    value = 0;
+                    
                 }
                 
                 
