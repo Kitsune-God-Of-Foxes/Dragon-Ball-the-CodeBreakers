@@ -17,7 +17,7 @@ public class CodeBreakers2 {
 
     public static boolean isLetter(String ch) {
         boolean I = ALPHABET.contains(ch) && ch.length() == 1;
-        return I;
+    return I;
     }
 
     public static String shiftLetter(String ch, int shift) {

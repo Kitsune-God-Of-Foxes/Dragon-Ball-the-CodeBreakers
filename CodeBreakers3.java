@@ -27,16 +27,38 @@ public static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 
 public static boolean isLetter(String ch) {
-
-return false;
+boolean I = ALPHABET.contains(ch) && ch.length() == 1;
+    return I;
 
 }
 
 
 
 public static String shiftLetter(String ch, int shift) {
-
-return ch;
+if (isLetter(ch))
+        {
+        int value = ALPHABET.indexOf(ch);
+        value = value + shift;
+        while (value < 0)
+        {
+        value += 26;
+        }
+        value = value % 26;
+        if (value != 25)
+        {
+        ch = ALPHABET.substring(value, value+1);
+        return ch;
+        }
+        else
+        {
+        ch = ALPHABET.substring(value);
+        return ch;
+        }
+        }
+        else
+        {
+        return ch;
+        }
 
 }
 
@@ -44,7 +66,20 @@ return ch;
 
 public static String encrypt(String message, int shift) {
 
-return message;
+int i = 0;
+        String newMessage = "";
+        while (i < message.length())
+        {
+            String letter = message.substring(i,i + 1);
+            if (isLetter(letter));
+           {
+                letter = shiftLetter(letter, shift);
+            
+            }
+            newMessage += letter;
+           i += 1;
+        }
+        return newMessage;
 
 }
 
@@ -52,15 +87,45 @@ return message;
 
 public static String decrypt(String message, int shift) {
 
-return message;
+int i = 0;
+        int c = 0;
+        String newMessage = "";
+        String letter = "";
+        shift = 26 * (1 + Math.abs(shift) % 26) - shift;
+        while (i < message.length())
+       {
+        
+            
+            letter = message.substring(c, c+1);
+            if (isLetter(letter));
+            {
+                letter = shiftLetter(letter, shift);
+            
+            }
+            newMessage += letter;
+            i += 1;
+            c += 1;
+        
+        
+        }
+        return newMessage;
 
 }
 
 
 
 public static String reverse(String text) {
-
-return text;
+String newText = "";
+        String letter = "";
+        for (int i = text.length(); i >= 0; i--) {
+            if (i + 1 < text.length()) {
+                letter = text.substring(i, i + 1);
+            } else {
+                letter = text.substring(i);
+            }
+            newText += letter;
+        }
+        return newText;
 
 }
 
@@ -68,19 +133,127 @@ return text;
 
 public static String repeatingThreeKeyShift(String text, int key) {
 
-return text;
+if (key < -999 || key > 999) {
+
+            throw new IllegalArgumentException("K: key must be -999 through 999.");
+
+        }
+        String letter = "";
+        int key1 = key / 100;
+        int key2 = (key % 100) / 10;
+        int key3 = key % 10;
+        int count = 1;
+        if (key < 0) {
+            key1 = 26 + key1;
+            key2 = 26 + key2;
+            key3 = 26 + key3;
+        }
+        String newText = "";
+        for (int i = 0; i < text.length(); i++) {
+            if (i + 1 < text.length()) {
+                letter = text.substring(i, i + 1);
+            } else {
+                letter = text.substring(i);
+            }
+            if (isLetter(letter))
+                {
+                if (count == 1) {
+                    letter = encrypt(letter, key1);
+                    count = 2;
+                    
+                }
+                else if (count == 2) {
+                    letter = encrypt(letter, key2);
+                    count = 3;
+                    
+                }
+                else if (count == 3) {
+                    letter = encrypt(letter, key3);
+                    count = 1;
+                    
+                }
+                
+                
+            }
+            newText += letter;
+        }
+        return newText;
 
 }
 
 
-
+public static float test(String ciphertext)
+{
+    return 0.0;
+}
  /** Returns the recovered plaintext. Precondition: ciphertext is not null. */
 
 public static String breakCode(String ciphertext) {
+int K = -999;
+int C = -26;
+float score = 0.0;
+String PlainText = "";
+String decrypting = "";
+while (C <= 26)
+{
+    while (K <= 999)
+    {
+        decypting = ciphertext;
+        decrypting = encrypt(decrypting, C);
+        decrypting = reverse(decrypting);
+        decrypting = repeatingThreeKeyShift(decrypting, K);
+        if (test(decrypting) > score){
+            PlainText = decrypting;
+            score = test(decrypting);
+        }
+        decypting = ciphertext;
+        decrypting = encrypt(decrypting, C);
+        decrypting = repeatingThreeKeyShift(decrypting, K);
+        decrypting = reverse(decrypting);
+        if (test(decrypting) > score){
+            PlainText = decrypting;
+            score = test(decrypting);
+        }
+        decypting = ciphertext;
+        decrypting = reverse(decrypting);
+        decrypting = encrypt(decrypting, C);
+        decrypting = repeatingThreeKeyShift(decrypting, K);
+        if (test(decrypting) > score){
+            PlainText = decrypting;
+            score = test(decrypting);
+        }
+        decypting = ciphertext;
+        decrypting = reverse(decrypting);
+        decrypting = repeatingThreeKeyShift(decrypting, K);
+        decrypting = encrypt(decrypting, C);
+        if (test(decrypting) > score){
+            PlainText = decrypting;
+            score = test(decrypting);
+        }
+        decypting = ciphertext;
+        decrypting = repeatingThreeKeyShift(decrypting, K);
+        decrypting = encrypt(decrypting, C);
+        decrypting = reverse(decrypting);
+        if (test(decrypting) > score){
+            PlainText = decrypting;
+            score = test(decrypting);
+        }
+        decypting = ciphertext;
+        decrypting = repeatingThreeKeyShift(decrypting, K);
+        decrypting = reverse(decrypting);
+        decrypting = encrypt(decrypting, C);
+        if (test(decrypting) > score){
+            PlainText = decrypting;
+            score = test(decrypting);
 
- // TODO: Find the transformation chain and recover the message.
+        }
+        K+= 1;
+    }
+    C += 1;
+    K = -999;
+}
 
-return ciphertext;
+return PlainText;
 
 }
 
