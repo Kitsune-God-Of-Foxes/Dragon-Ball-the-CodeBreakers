@@ -184,7 +184,101 @@ if (key < -999 || key > 999) {
 
 public static float test(String ciphertext)
 {
-    return 0.0;
+    float score = 0.0;
+    String letter = "";
+    int occurences = 0;
+    String currenLetter = "";
+    int a = 1;
+    for (int i = 0; i <=10; i++){
+        
+        while (a < length(ciphertext)){
+            currentLetter = ciphertext.substring(a-1, 1);
+            if (currentLetter = letter){
+                occurences += 1;
+            }
+            a += 1;
+        }
+       if (letter = A){
+            
+            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            {
+            score += 0.04;
+            }
+        }
+        if (letter = A){
+            
+            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            {
+            score += 0.04;
+            }
+        }
+        if (letter = A){
+            
+            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            {
+            score += 0.04;
+            }
+        }
+        if (letter = A){
+            
+            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            {
+            score += 0.04;
+            }
+        }
+        if (letter = A){
+            
+            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            {
+            score += 0.04;
+            }
+        }
+        if (letter = A){
+            
+            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            {
+            score += 0.04;
+            }
+        }
+        if (letter = A){
+            
+            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            {
+            score += 0.04;
+            }
+        }
+        if (letter = A){
+            
+            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            {
+            score += 0.04;
+            }
+        }
+        if (letter = A){
+            
+            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            {
+            score += 0.04;
+            }
+        }
+        if (letter = A){
+            
+            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            {
+            score += 0.04;
+            }
+        }
+        
+        
+     
+      
+            
+   
+
+    
+        
+    return score;
+}
 }
  /** Returns the recovered plaintext. Precondition: ciphertext is not null. */
 
