@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class CodeBreakers {
     public static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    /**
+    /** 
      * Determines whether ch is exactly one capital letter A-Z.
      * Precondition: ch is not null. It may be empty or have any length.
      * @param ch the string to check
