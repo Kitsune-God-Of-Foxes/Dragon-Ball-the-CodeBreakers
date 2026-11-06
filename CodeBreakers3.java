@@ -188,10 +188,16 @@ public static float test(String ciphertext)
     String letter = "";
     int occurences = 0;
     String currenLetter = "";
+    String Landmarks = ETAOIZQJXK;
     int a = 1;
-    for (int i = 0; i <=10; i++){
-        
+    for (int i = 0; i <10; i++){
+        if (i + 1 != 10){
+        Letter = landmarks.substring(i, i + 1)
+        }
+        else
+        {Letter = landmarks.substring(i, i + 1)}
         while (a < length(ciphertext)){
+            
             currentLetter = ciphertext.substring(a-1, 1);
             if (currentLetter = letter){
                 occurences += 1;
@@ -202,70 +208,70 @@ public static float test(String ciphertext)
             
             if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
             {
-            score += 0.04;
+            score += 0.1;
             }
         }
-        if (letter = A){
+        if (letter = E){
             
-            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            if (((occurences / length(ciphertext))) > (0.08) && (occurences / length(ciphertext)) < 0.15)
             {
-            score += 0.04;
+            score += 0.1;
             }
         }
-        if (letter = A){
+        if (letter = T){
             
-            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            if (((occurences / length(ciphertext))) > (0.06) && (occurences / length(ciphertext)) < 0.11)
             {
-            score += 0.04;
+            score += 0.1;
             }
         }
-        if (letter = A){
+        if (letter = O){
             
-            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            if (((occurences / length(ciphertext))) > (0.045) && (occurences / length(ciphertext)) < 0.09)
             {
-            score += 0.04;
+            score += 0.1;
             }
         }
-        if (letter = A){
+        if (letter = N){
             
-            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            if (((occurences / length(ciphertext))) > (0.04) && (occurences / length(ciphertext)) < 0.085)
             {
-            score += 0.04;
+            score += 0.1;
             }
         }
-        if (letter = A){
+        if (letter = Z){
             
-            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            if (((occurences / length(ciphertext))) > (0) && (occurences / length(ciphertext)) < 0.001)
             {
-            score += 0.04;
+            score += 0.1;
             }
         }
-        if (letter = A){
+        if (letter = Q){
             
-            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            if (((occurences / length(ciphertext))) > (0.0005) && (occurences / length(ciphertext)) < 0.002)
             {
-            score += 0.04;
+            score += 0.1;
             }
         }
-        if (letter = A){
+        if (letter = J){
             
-            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            if (((occurences / length(ciphertext))) > (0.001) && (occurences / length(ciphertext)) < 0.003)
             {
-            score += 0.04;
+            score += 0.1;
             }
         }
-        if (letter = A){
+        if (letter = X){
             
-            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            if (((occurences / length(ciphertext))) > (0.0015) && (occurences / length(ciphertext)) < 0.0035)
             {
-            score += 0.04;
+            score += 0.1;
             }
         }
-        if (letter = A){
+        if (letter = K){
             
-            if (((occurences / length(ciphertext))) > (0.05) && (occurences / length(ciphertext)) < 0.1)
+            if (((occurences / length(ciphertext))) > (0.005) && (occurences / length(ciphertext)) < 0.01)
             {
-            score += 0.04;
+            score += 0.1;
             }
         }
         
