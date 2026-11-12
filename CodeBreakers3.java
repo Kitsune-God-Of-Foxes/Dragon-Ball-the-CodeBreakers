@@ -280,7 +280,7 @@ public static float test(String ciphertext)
       
             
    
-
+// this is the finished product
     
         
     return score;
